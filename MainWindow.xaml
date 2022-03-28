@@ -1,0 +1,17 @@
+﻿<Window x:Class="ConvertValue.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ConvertValue"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+    xmlns:System="clr-namespace:System;assembly=mscorlib">
+    <Window.Resources>
+        <local:MilestoK x:Key="MilestoK"/>
+    </Window.Resources>
+    <Grid>
+        <TextBox x:Name="Input" HorizontalAlignment="Left" Height="57" Margin="189,97,0,0" VerticalAlignment="Top" Width="310" FontSize="24" />
+        <TextBlock x:Name="Convert" HorizontalAlignment="Left" Height="126" TextWrapping="Wrap" VerticalAlignment="Top" Width="384" Margin="189,236,0,0" FontSize="24" Text="{Binding Text, ConverterParameter=1, Converter={StaticResource MilestoK}, ElementName=Input}"/>
+    </Grid>
+</Window>
